@@ -28,7 +28,7 @@ The repository contains the following files:
 ### __Deep k-Means__
 
 Deep k-Means (DKM) is run using the following command:
-```dkm.py [-h] -d <string> [-v] [-p] [-a] [-s] [-c] [-l <double>] [-e <int>] [-f <int>] [-b <minibatch size>]```
+```dkm.py [-h] -d <string> [-v] [-p] [-a] [-s] [-c] [-l <double>] [-e <int>] [-f <int>] [-b <int>]```
 
 The meaning of each argument is detailed below:
 * ``-h``, ``--help``: Show usage.
