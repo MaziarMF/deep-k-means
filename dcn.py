@@ -26,7 +26,7 @@ parser.add_argument("-c", "--cpu", help="Force the program to run on CPU", actio
 parser.add_argument("-l", "--lambda", type=float, default=1.0, dest="lambda_",
                     help="Value of the hyperparameter weighing the clustering loss against the reconstruction loss")
 parser.add_argument("-e", "--p_epochs", type=int, default=50, help="Number of pretraining epochs")
-parser.add_argument("-f", "--f_epochs", type=int, default=50, help="Number of fine-tuning epochs per alpha value")
+parser.add_argument("-f", "--f_epochs", type=int, default=50, help="Number of fine-tuning epochs")
 parser.add_argument("-b", "--batch_size", type=int, default=256, help="Size of the minibatches used by the optimizer")
 args = parser.parse_args()
 
