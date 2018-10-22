@@ -38,7 +38,7 @@ elif args.dataset == "MNIST":
 elif args.dataset == "20NEWS":
     import _20news_specs as specs
 elif args.dataset == "RCV1":
-    import rcv1_specs0 as specs
+    import rcv1_specs as specs
 else:
     parser.error("Unknown dataset!")
     exit()
