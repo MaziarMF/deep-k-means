@@ -65,10 +65,8 @@ class DkmCompGraph(object):
         self.alpha = tf.placeholder(dtype=TF_FLOAT_TYPE, shape=())  # Placeholder tensor for alpha
         list_exp = []
         for i in range(n_clusters):
-            # exp = tf.exp(-tf.minimum(alpha * stack_dist[i], 80.0 * tf.ones(tf.shape(stack_dist[i]), TF_FLOAT_TYPE)))
             exp = tf.exp(-self.alpha * (self.stack_dist[i] - min_dist))
             list_exp.append(exp)
-            # sum_exponentials += exp
         stack_exp = tf.stack(list_exp)
         sum_exponentials = tf.reduce_sum(stack_exp, axis=0)
 
@@ -77,9 +75,7 @@ class DkmCompGraph(object):
         list_weighted_dist = []
         for j in range(n_clusters):
             softmax = stack_exp[j] / sum_exponentials
-            # softmax = tf.div(stack_exp[j], sum_exponentials)
             weighted_dist = self.stack_dist[j] * softmax
-            # weighted_dist = tf.multiply(stack_dist[j], softmax)
             list_softmax.append(softmax)
             list_weighted_dist.append(weighted_dist)
         stack_weighted_dist = tf.stack(list_weighted_dist)
