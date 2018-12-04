@@ -61,7 +61,7 @@ class DkmCompGraph(object):
         ## Second, find the minimum squared distance for softmax normalization
         min_dist = tf.reduce_min(list_dist, axis=0)
 
-        ## Third, compute exponentials with minimum argument of -100 to avoid underflow (0/0) issues in softmaxes
+        ## Third, compute exponentials shifted with min_dist to avoid underflow (0/0) issues in softmaxes
         self.alpha = tf.placeholder(dtype=TF_FLOAT_TYPE, shape=())  # Placeholder tensor for alpha
         list_exp = []
         for i in range(n_clusters):
